@@ -1,25 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as router, Route, Router } from 'react-router-dom';                                 //we could have used Redux, but this is simpler!
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    <Router>
+        <Route path="/" exact component={Join}></Route>             //When the user first comes to the page, he will be greated by the Join component.
+        <Route path="/chat" component={Chat}></Route>               //When the user inputs data, they can join the chat component
+    </Router>
 }
-
-export default App;

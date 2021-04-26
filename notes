@@ -1,0 +1,5 @@
+QUERYSTRING Module
+https://www.npmjs.com/package/query-string
+
+QueryString module is used to retrieve the URL of the data inputted by the user.
+The queryString.parse(location.search) parses the data into an object which I can then further destructure.

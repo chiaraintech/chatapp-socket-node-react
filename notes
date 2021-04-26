@@ -3,3 +3,9 @@ https://www.npmjs.com/package/query-string
 
 QueryString module is used to retrieve the URL of the data inputted by the user.
 The queryString.parse(location.search) parses the data into an object which I can then further destructure.
+
+
+SOCKET Module
+https://socket.io/
+I call socket io onto an endpoint, and that endpoint is the localhost:5000 which I am running in the backend.
+We can emit events from our client's socket using emitting events.

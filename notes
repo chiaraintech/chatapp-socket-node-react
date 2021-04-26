@@ -9,3 +9,5 @@ SOCKET Module
 https://socket.io/
 I call socket io onto an endpoint, and that endpoint is the localhost:5000 which I am running in the backend.
 We can emit events from our client's socket using emitting events.
+Socket.on and Socket.emit needs a callback function.
+Callback functions are used for error handling.

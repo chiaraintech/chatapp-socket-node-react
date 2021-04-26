@@ -10,20 +10,26 @@ const Chat = ( {location} ) => {
    const [room, setRoom] = useState('');
    const ENDPOINT = 'localhost:5000';
 
-   useEffect(() => {
-      const { name, room } = queryString.parse(location.search);
-  
-      socket = io(ENDPOINT);
-  
-      setRoom(room);
-      setName(name)
-  
-      socket.emit('join', { name, room }, (error) => {
-        if(error) {
-          alert(error);
-        }
-      });
-    }, [ENDPOINT, location.search]);
+ useEffect(() => {
+    const { name, room } = queryString.parse(location.search);
+
+    socket = io(ENDPOINT);
+
+    setRoom(room);
+    setName(name)
+
+    socket.emit('join', { name, room }, (error) => {
+      if(error) {
+        alert(error);
+      }
+    });
+
+    return () => {
+      socket.emit('disconnect');
+      socket.off();
+    }
+
+  }, [ENDPOINT, location.search]);
 
    return (
       <h1>Chat</h1>

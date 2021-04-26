@@ -16,7 +16,8 @@ io.on('connection', (socket) => {                       //This socket will be co
     console.log("We have a new connection.")
 
     socket.on('join', ({name, room}) => {
-        console.log(name,room)
+        console.log(name,room);
+
     })
 
     socket.on('disconnect', () => {
